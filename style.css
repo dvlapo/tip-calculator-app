@@ -142,6 +142,11 @@ form input {
     color: var(--veryDarkCyan);
 }
 
+.tip-buttons input[type='button'].selected {
+    background-color: var(--strongCyan);
+    color: var(--veryDarkCyan);
+}
+
 .tip-buttons input[type='number'] {
     background-color: var(--veryLightGrayishCyan);
     color: var(--veryDarkCyan);
@@ -222,6 +227,10 @@ aside button {
     transition: background-color 0.4s;
 }
 
+aside button.active {
+    background-color: var(--strongCyan);
+}
+
 aside button:hover {
     background-color: var(--strongCyan);
 }
@@ -238,12 +247,12 @@ aside button:hover {
     .container {
         display: block;
         padding: 8vw;
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
     }
 
     .main-form {
         margin-bottom: 3rem;
-        border-bottom-left-radius: 0;
-        border-bottom-right-radius: 0;
     }
 
     .tip-buttons input {
@@ -254,7 +263,16 @@ aside button:hover {
         padding: 6vw;
     }
 
+    aside .result h3 {
+        font-size: 1rem;
+        margin-bottom: 0;
+    }
+
+    aside .result h1 {
+        font-size: 2rem;
+    }
+
     aside button {
-        margin-top: 1rem;
+        margin-top: 0;
     }
 }
