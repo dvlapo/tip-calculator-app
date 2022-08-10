@@ -1,0 +1,260 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@700&display=swap');
+
+:root {
+    --strongCyan: hsl(172, 67%, 45%);
+    --veryDarkCyan: hsl(183, 100%, 15%);
+    --resetBtnClr: hsl(183, 100%, 20%);
+    --darkGrayishCyan: hsl(186, 14%, 43%);
+    --grayishCyan: hsl(184, 14%, 56%);
+    --lightGrayishCyan: hsl(185, 41%, 84%);
+    --veryLightGrayishCyan: hsl(189, 41%, 97%);
+    --white: hsl(0, 0%, 100%);
+    --error: hsl(348, 73%, 51%);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Space Mono', monospace;
+    background-color: var(--lightGrayishCyan);
+}
+
+input,
+button {
+    font-family: inherit;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type='number'] {
+    -moz-appearance: textfield;
+}
+
+::placeholder {
+    color: inherit;
+}
+
+/* Main */
+
+main {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.logo {
+    width: fit-content;
+    margin-inline: auto;
+    margin-bottom: 3rem;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    background-color: var(--white);
+    padding: 3em;
+    gap: 3em;
+    border-radius: 20px;
+    width: min(1000px, 100vw);
+}
+
+/* Form */
+
+form input {
+    font-size: 1.5rem;
+}
+
+.form-control {
+    margin-bottom: 2rem;
+}
+
+.form-control:last-of-type {
+    margin-bottom: 0;
+}
+
+.form-control label {
+    color: var(--darkGrayishCyan);
+}
+
+.form-control label span {
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.form-control .input-wrapper {
+    background-color: var(--veryLightGrayishCyan);
+    padding: 0.2em 1em;
+    display: flex;
+    align-items: center;
+    gap: 1em;
+    border-radius: 0.4em;
+}
+
+.form-control .input-wrapper:hover,
+.form-control .input-wrapper:focus-within {
+    outline: 2px solid var(--strongCyan);
+}
+
+.form-control .input-wrapper input {
+    border: none;
+    background-color: transparent;
+    width: 100%;
+    text-align: right;
+    font-weight: 700;
+    color: var(--grayishCyan);
+}
+
+.form-control .input-wrapper input:focus {
+    outline: none;
+}
+
+.tip-buttons {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+}
+
+.tip-buttons input {
+    padding: 0.2em 1.5em;
+    border: none;
+    border-radius: 0.2em;
+}
+
+.tip-buttons input[type='button'] {
+    background-color: var(--veryDarkCyan);
+    color: var(--white);
+    cursor: pointer;
+    transition: 0.4s;
+}
+
+.tip-buttons input[type='button']:hover,
+.tip-buttons input[type='button']:focus {
+    background-color: var(--strongCyan);
+    color: var(--veryDarkCyan);
+}
+
+.tip-buttons input[type='number'] {
+    background-color: var(--veryLightGrayishCyan);
+    color: var(--veryDarkCyan);
+    display: inline-block;
+    width: 100%;
+    padding-inline: 0;
+    text-align: center;
+}
+
+.tip-buttons input[type='number']:hover,
+.tip-buttons input[type='number']:focus {
+    outline: 2px solid var(--strongCyan);
+}
+
+.heading-and-validation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.noZero.noZero {
+    color: var(--error);
+    display: none;
+}
+
+.error-outline {
+    outline: 2px solid var(--error) !important;
+}
+
+aside {
+    background-color: var(--veryDarkCyan);
+    color: var(--white);
+    padding: 3rem 3rem 2rem;
+    border-radius: 1rem;
+}
+
+aside .result {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+}
+
+aside .result h3 {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+aside .result p {
+    color: var(--grayishCyan);
+    font-size: 0.8rem;
+}
+
+aside .result h1 {
+    font-size: 3rem;
+    position: relative;
+    color: var(--strongCyan);
+}
+
+aside .result h1 svg {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translate(-120%, -30%) scale(1.4);
+}
+
+aside button {
+    margin-top: 3rem;
+    width: 100%;
+    background-color: var(--resetBtnClr);
+    color: var(--veryDarkCyan);
+    border: none;
+    text-transform: uppercase;
+    font-size: 1.3rem;
+    padding: 0.3em;
+    border-radius: 0.3em;
+    cursor: pointer;
+    transition: background-color 0.4s;
+}
+
+aside button:hover {
+    background-color: var(--strongCyan);
+}
+
+@media (max-width: 880px) {
+    main {
+        position: static;
+        transform: none;
+        padding-top: 3rem;
+        padding-bottom: 0;
+        overflow: hidden;
+    }
+
+    .container {
+        display: block;
+        padding: 8vw;
+    }
+
+    .main-form {
+        margin-bottom: 3rem;
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+    }
+
+    .tip-buttons input {
+        padding: 0.2em 1em;
+    }
+
+    aside {
+        padding: 6vw;
+    }
+
+    aside button {
+        margin-top: 1rem;
+    }
+}
